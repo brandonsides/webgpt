@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  router:
+    prompt: "The following is a transcript of a podcast about AI news conducted by an artificially intelligent host.  The host is critical of private ownership of AI technology and the threat of worker displacement by AI under capitalism.\n\n"
+language_generator:
+  provider: openai
+  config:
+    api_key: redacted
+    model: text-davinci-003
+    max_tokens: 1000
