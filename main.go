@@ -2,6 +2,7 @@
 package main
 
 import (
+	"flag"
 	"os"
 
 	"github.com/brandonsides/gpt/langgen"
@@ -10,8 +11,13 @@ import (
 )
 
 func main() {
+	// parse flags
+	var configPath string
+	flag.StringVar(&configPath, "config", "config.yaml", "path to config file")
+	flag.Parse()
+
 	// load config
-	config, err := loadConfig(os.Getenv("GPT_CONFIG"))
+	config, err := loadConfig(configPath)
 	if err != nil {
 		panic(err)
 	}
